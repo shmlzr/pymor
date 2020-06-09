@@ -17,6 +17,7 @@ provided for getting started quickly.
     getting_started
     technical_overview
     tutorial01
+    tutorial_external_solver
     environment
     release_notes
     bibliography
