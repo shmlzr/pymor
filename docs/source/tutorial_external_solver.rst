@@ -1,10 +1,6 @@
 Tutorial 2: Using pyMOR’s discretization toolkit
 ================================================
 
-.. code-links::
-    :timeout: -1
-
-
 One of pyMOR's main features is easy integration of external Solvers. In this tutorial
 we will do this step-by-step for a toy solver of the diffusion equation written in C++.
 First we need a class to store our data in with some basic linear algebra operations
@@ -82,16 +78,31 @@ The definitions for the Vector class are pretty straight forward:
     return _data.data();
   }
 
+.. jupyter-kernel:: bash
+    :id: make
+
+.. jupyter-execute::
+
+   mkdir -p source/minimal_cpp_demo/build
+   cd source/minimal_cpp_demo/build
+   cmake ..
+   make
+
+FILL TEXT
+
+.. jupyter-kernel::
+.. jupyter-execute::
+
+  import sys
+  sys.path.insert(0, 'source/minimal_cpp_demo/build')
+
+  import model
+  dir(model)
+
+
+Download the notebook for first kernel: :jupyter-download:notebook:`make`
+            notebook and script for second kernel :jupyter-download:notebook:`tutorial_external_solver`
+            :jupyter-download:script:`tutorial_external_solver`
 
 :download:`model.cc <minimal_cpp_demo/model.cc>`
 :download:`CMakeLists.txt <minimal_cpp_demo/CMakeLists.txt>`
-
-
-.. nbplot::
-
-   %%bash
-   ls -la
-   mkdir minimal_cpp_demo/build
-   cd minimal_cpp_demo/build
-   cmake ..
-   make
