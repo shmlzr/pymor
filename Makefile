@@ -49,7 +49,7 @@ test:
 	python setup.py pytest
 
 jupyter:
-	jupyter notebook --notebook-dir=$(NB_DIR) --NotebookApp.disable_check_xsrf=True
+	jupyter notebook --ip 0.0.0.0 --no-browser --notebook-dir=$(NB_DIR) --NotebookApp.disable_check_xsrf=True
 
 tutorials: NB_DIR="docs/_build/html"
 tutorials: docs jupyter
